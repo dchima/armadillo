@@ -1,2 +1,2 @@
 # armadillo
-my personal backend server for blogs and photos.
+my personal backend server.
