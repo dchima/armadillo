@@ -21,4 +21,4 @@ server.applyMiddleware({ app });
 models.sequelize.authenticate();
 models.sequelize.sync();
 
-app.listen(3000, () => console.log(`listening on port http://localhost:3000${server.graphqlPath} 🚀 `));
+const port = app.listen(env.PORT || 3000, () => console.log(`listening on port http://localhost:${port.address().port}${server.graphqlPath} 🚀 `));
