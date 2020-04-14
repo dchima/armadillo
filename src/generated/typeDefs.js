@@ -14,7 +14,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    getProjects: Project!
+    getProjects(secretKey: String!): Project!
   }
 
   type Mutation {
