@@ -1,5 +1,3 @@
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
 import env from '../config/env';
 
 const { SECRET_KEY } = env;
