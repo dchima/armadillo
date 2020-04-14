@@ -40,7 +40,7 @@ mutation {
     stacks: ["stack", "stack"],
     githubUrl: "github.com/url",
     extenralUrl: "https://example.com",
-    documentUrl: "https://docs.com"
+    docsUrl: "https://docs.com"
   ) {
     id
     title
@@ -49,7 +49,7 @@ mutation {
     stacks
     githubUrl
     externalUrl
-    documentUrl
+    docsUrl
   }
 }
 ```
