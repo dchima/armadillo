@@ -8,9 +8,9 @@ const typeDefs = gql`
     category: String!
     description: String!
     stacks: [String!]!
-    githubUrl: String!
-    externalUrl: String!
-    docsUrl: String!
+    githubUrl: String
+    externalUrl: String
+    docsUrl: String
   }
 
   type Query {
