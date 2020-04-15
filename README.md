@@ -21,9 +21,9 @@ npm run start:dev
 
 ## Tasks
 The client side should be able to
-- [ ] add project
-- [ ] Get all project
-- [ ] edit project
+- [x] add project
+- [x] Get all project
+- [x] edit project
 - [ ] remove project
 
 ## Queries
