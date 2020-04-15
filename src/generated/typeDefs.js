@@ -28,6 +28,17 @@ const typeDefs = gql`
       docsUrl: String,
       secretKey: String!
     ): Project!
+    editProject(
+      id: Int!,
+      secretKey: String!,
+      title: String,
+      category: String,
+      description: String,
+      stacks: [String!],
+      githubUrl: String,
+      externalUrl: String,
+      docsUrl: String,
+    ): Project!
   }
 `;
 
