@@ -40,7 +40,8 @@ mutation {
     stacks: ["stack", "stack"],
     githubUrl: "github.com/url",
     extenralUrl: "https://example.com",
-    docsUrl: "https://docs.com"
+    docsUrl: "https://docs.com",
+    secretKey: "secret_key"
   ) {
     id
     title
@@ -51,5 +52,39 @@ mutation {
     externalUrl
     docsUrl
   }
+}
+```
+
+### get project
+request
+```javascript
+query {
+    getProjects(secretKey: "currentsecretkey") {
+        id
+        title
+        category
+        description
+        stacks
+        githubUrl
+        externalUrl
+        docsUrl
+        
+    }
+}
+```
+
+### edit project
+request
+```javascript
+mutation {
+    editProject(
+        id: 3,
+        title: "Site V1",
+        secretKey: "currentsecretkey"
+    ){
+        id
+        title
+        category
+    }
 }
 ```
