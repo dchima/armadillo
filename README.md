@@ -25,10 +25,21 @@ The client side should be able to
 - [x] Get all project
 - [x] edit project
 - [ ] remove project
+- [ ] add internet article
+- [ ] get all internet articles
+- [ ] edit internet article
+- [ ] remove internet article
+- [ ] add a story
+- [ ] edit a story
+- [ ] remove a story
+- [ ] get all stories
+- [ ] get one story.
+
 
 ## Queries
 @ localhost:3000/graphql
 
+## Projects
 ### add project
 request
 ```javascript
@@ -41,7 +52,7 @@ mutation {
     githubUrl: "github.com/url",
     extenralUrl: "https://example.com",
     docsUrl: "https://docs.com",
-    secretKey: "secret_key"
+    secretKey: "sec_key"
   ) {
     id
     title
@@ -59,7 +70,7 @@ mutation {
 request
 ```javascript
 query {
-    getProjects(secretKey: "currentsecretkey") {
+    getProjects(secretKey: "sec_key") {
         id
         title
         category
@@ -80,11 +91,81 @@ mutation {
     editProject(
         id: 3,
         title: "Site V1",
-        secretKey: "currentsecretkey"
+        secretKey: "sec_key"
     ){
         id
         title
         category
     }
+}
+```
+
+### remove project
+request
+```javascript
+mutation {
+    removeProject(id: 3, secretKey: "sec_key")
+}
+```
+
+## Articles
+### add articles
+request
+```javascript
+mutation {
+  editArticle(
+    title: "article tite",
+    author: "article author",
+    category: "article category",
+    link: "article link",
+    summary: "article summary",
+    imageUrl: "https://image.com",
+    secretKey: "secret_key"
+  ) {
+    id
+    title
+    author
+    category
+    link
+    summary
+    imagUrl
+  }
+}
+```
+### edit articles
+request
+```javascript
+mutation {
+  addArticle(
+    id: 2,
+    secretkey: "sec_key
+    author: "article author",
+  ) {
+    id
+    title
+    author
+  }
+}
+```
+### get articles
+request
+```javascript
+mutation {
+  getArticles(secretKey: "sec_key") {
+        id
+    title
+    author
+    category
+    link
+    summary
+    imageUrl
+  }
+}
+```
+### remove articles
+request
+```javascript
+mutation {
+    removeArticle(id: 3, secretKey: "sec_key")
 }
 ```

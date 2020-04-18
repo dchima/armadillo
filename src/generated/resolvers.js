@@ -1,66 +1,33 @@
-import env from '../config/env';
+import { Projects, Articles } from '../controllers';
 
-const { SECRET_KEY } = env;
+const {
+  getProjects,
+  addProject,
+  editProject,
+  removeProject,
+} = Projects;
+
+const {
+  getArticles,
+  addArticle,
+  editArticle,
+  removeArticle,
+} = Articles;
 
 const resolvers = {
 
   Query: {
-    getProjects: async (root, { secretKey }, { models }) => {
-      if (secretKey !== SECRET_KEY) throw new Error('secret key does not match');
-      return models.Project.findAll();
-    },
+    getProjects,
+    getArticles,
   },
 
   Mutation: {
-    addProject: async (parent,
-      {
-        title,
-        category,
-        description,
-        stacks,
-        githubUrl,
-        externalUrl,
-        docsUrl,
-        secretKey,
-      }, { models }) => {
-      if (secretKey !== SECRET_KEY) throw new Error('secret key does not match');
-      return models.Project.create({
-        title,
-        category,
-        description,
-        stacks,
-        githubUrl,
-        externalUrl,
-        docsUrl,
-      });
-    },
-    editProject: async (parent, {
-      id,
-      secretKey,
-      title,
-      category,
-      description,
-      stacks,
-      githubUrl,
-      externalUrl,
-      docsUrl,
-    }, { models }) => {
-      if (secretKey !== SECRET_KEY) throw new Error('secret key does not match');
-      const updateData = {
-        title,
-        category,
-        description,
-        stacks,
-        githubUrl,
-        externalUrl,
-        docsUrl,
-      };
-      const [rowaffected, [entity]] = await models.Project.update(
-        updateData, { returning: true, where: { id } }
-      );
-      if (!rowaffected) throw new Error('Project to be edited not found');
-      return entity.dataValues;
-    },
+    addProject,
+    editProject,
+    removeProject,
+    addArticle,
+    editArticle,
+    removeArticle,
   },
 
 };
