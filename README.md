@@ -24,11 +24,11 @@ The client side should be able to
 - [x] add project
 - [x] Get all project
 - [x] edit project
-- [ ] remove project
-- [ ] add internet article
-- [ ] get all internet articles
-- [ ] edit internet article
-- [ ] remove internet article
+- [x] remove project
+- [x] add internet article
+- [x] get all internet articles
+- [x] edit internet article
+- [x] remove internet article
 - [ ] add a story
 - [ ] edit a story
 - [ ] remove a story
@@ -128,7 +128,7 @@ mutation {
     category
     link
     summary
-    imagUrl
+    imageUrl
   }
 }
 ```
