@@ -23,9 +23,23 @@ const typeDefs = gql`
     imageUrl: String
   }
 
+  type Publication {
+    id: Int!
+    title: String!
+    slug: String!
+    author: String!
+    views: Int
+    category: String!
+    description: String!
+    body: String!
+    imageUrl: String
+  }
+
   type Query {
     getProjects(secretKey: String!): [Project]
     getArticles(secretKey: String!): [Article]
+    getPublications: [Publication]
+    getPublication(slug: String, id: Int): Publication
   }
 
   type Mutation {
@@ -79,6 +93,32 @@ const typeDefs = gql`
     ): Article!
 
     removeArticle(
+      id: Int!,
+      secretKey: String!
+    ): String!
+
+    addPublication(
+      title: String!,
+      category: String!,
+      author: String!,
+      description: String!,
+      body: String!,
+      imageUrl: String,
+      secretKey: String!,
+    ): Publication!
+
+    editPublication(
+      id: Int!,
+      title: String,
+      category: String,
+      author: String,
+      description: String,
+      body: String,
+      imageUrl: String,
+      secretKey: String!,
+    ): Publication!
+
+    removePublication(
       id: Int!,
       secretKey: String!
     ): String!

@@ -113,7 +113,7 @@ mutation {
 request
 ```javascript
 mutation {
-  editArticle(
+  addArticle(
     title: "article tite",
     author: "article author",
     category: "article category",
@@ -136,7 +136,7 @@ mutation {
 request
 ```javascript
 mutation {
-  addArticle(
+  editArticle(
     id: 2,
     secretkey: "sec_key
     author: "article author",
@@ -167,5 +167,81 @@ request
 ```javascript
 mutation {
     removeArticle(id: 3, secretKey: "sec_key")
+}
+```
+
+## Publications
+### add publication
+request
+```javascript
+mutation {
+  addPublication(
+    title: "publication title",
+    author: "publication author",
+    category: "category",
+    description: "publication description",
+    body: "<p>publication body</p>"
+    imageUrl: "https://image.com",
+    secretKey: "sec_key"
+  ) {
+    id
+    title
+    author
+    category
+    description
+    body
+    imageUrl
+  }
+}
+```
+### edit publication
+request
+```javascript
+mutation {
+    editPublication(
+        id: 1,
+        description: "new publication description",
+        secretKey: "sec_key"
+    ){
+        id
+        title
+        category
+    }
+}
+```
+### remode publication
+request
+```javascript
+mutation {
+    removePublication(id: 1, secretKey: "sec_key")
+}
+```
+### get publications
+request
+```javascript
+query {
+    getPublications {
+        title
+        id
+        author
+        category
+        description
+        slug
+    }
+}
+```
+### get sinlge publication
+request
+```javascript
+// slug or id
+query {
+    getPublication(slug: "welcome-home") {
+        title
+        id
+        author
+        category
+        description
+        slug
+    }
 }
 ```

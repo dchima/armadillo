@@ -1,4 +1,4 @@
-import { Projects, Articles } from '../controllers';
+import { Projects, Articles, Publications } from '../controllers';
 
 const {
   getProjects,
@@ -14,11 +14,21 @@ const {
   removeArticle,
 } = Articles;
 
+const {
+  getPublication,
+  getPublications,
+  addPublication,
+  editPublication,
+  removePublication,
+} = Publications;
+
 const resolvers = {
 
   Query: {
     getProjects,
     getArticles,
+    getPublication,
+    getPublications,
   },
 
   Mutation: {
@@ -28,6 +38,9 @@ const resolvers = {
     addArticle,
     editArticle,
     removeArticle,
+    addPublication,
+    editPublication,
+    removePublication,
   },
 
 };
