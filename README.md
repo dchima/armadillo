@@ -29,11 +29,11 @@ The client side should be able to
 - [x] get all internet articles
 - [x] edit internet article
 - [x] remove internet article
-- [ ] add a story
-- [ ] edit a story
-- [ ] remove a story
-- [ ] get all stories
-- [ ] get one story.
+- [x] add a story
+- [x] edit a story
+- [x] remove a story
+- [x] get all stories
+- [x] get one story.
 
 
 ## Queries
