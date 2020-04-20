@@ -9,9 +9,11 @@ const Publications = {
   },
 
   async getPublication(root, { slug, id }, { models }) {
-    if(!slug || !id) throw new Error('publication slug or id needed');
-    if (slug) return models.Publication.findOne({ where: { slug } });
-    return models.Publication.findOne({ where: { id } });
+    if (!slug && !id) throw new Error('publication slug or id needed');
+    let value;
+    if (slug) value = models.Publication.findOne({ where: { slug } });
+    if (id) value = models.Publication.findOne({ where: { id } });
+    return value;
   },
 
   async addPublication(parent,
