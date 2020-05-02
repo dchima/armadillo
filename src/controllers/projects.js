@@ -5,9 +5,13 @@ const { SECRET_KEY } = env;
 
 const Projects = {
 
-  async getProjects(root, { secretKey }, { models }) {
-    if (secretKey !== SECRET_KEY) throw new Error('secret key does not match');
+  async getProjects(root, argd, { models }) {
     return models.Project.findAll();
+  },
+
+  async getProject(root, { id }, { models }) {
+    if (!id) throw new Error('project id needed');
+    return models.Project.findOne({ where: { id } });
   },
 
   async addProject(parent,

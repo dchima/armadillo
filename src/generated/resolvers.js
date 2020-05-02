@@ -2,6 +2,7 @@ import { Projects, Articles, Publications } from '../controllers';
 
 const {
   getProjects,
+  getProject,
   addProject,
   editProject,
   removeProject,
@@ -9,6 +10,7 @@ const {
 
 const {
   getArticles,
+  getArticle,
   addArticle,
   editArticle,
   removeArticle,
@@ -26,7 +28,9 @@ const resolvers = {
 
   Query: {
     getProjects,
+    getProject,
     getArticles,
+    getArticle,
     getPublication,
     getPublications,
   },

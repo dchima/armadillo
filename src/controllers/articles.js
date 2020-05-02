@@ -3,9 +3,13 @@ import env from '../config/env';
 const { SECRET_KEY } = env;
 
 const Articles = {
-  async getArticles(root, { secretKey }, { models }) {
-    if (secretKey !== SECRET_KEY) throw new Error('secret key does not match');
+  async getArticles(root, args, { models }) {
     return models.Article.findAll();
+  },
+
+  async getArticle(root, { id }, { models }) {
+    if (!id) throw new Error('article id needed');
+    return models.Article.findOne({ where: { id } });
   },
 
   async addArticle(parent,

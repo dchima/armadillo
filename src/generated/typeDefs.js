@@ -36,8 +36,10 @@ const typeDefs = gql`
   }
 
   type Query {
-    getProjects(secretKey: String!): [Project]
-    getArticles(secretKey: String!): [Article]
+    getProjects: [Project]
+    getProject(id: Int!): Project
+    getArticles: [Article]
+    getArticle(id: Int!): Article
     getPublications: [Publication]
     getPublication(slug: String, id: Int): Publication
   }
