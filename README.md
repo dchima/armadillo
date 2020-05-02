@@ -150,7 +150,7 @@ mutation {
 ### get articles
 request
 ```javascript
-mutation {
+query {
   getArticles(secretKey: "sec_key") {
         id
     title
