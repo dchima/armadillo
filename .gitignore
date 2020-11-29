@@ -95,7 +95,7 @@ typings/
 .prettierrc.yaml
 
 # misc
-www.danielchima.com.key
-www.danielchima.com.csr
+api.danielchima.com.key
+api.danielchima.com.csr
 
 # End of https://www.gitignore.io/api/node

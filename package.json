@@ -39,10 +39,10 @@
     "sequelize-cli": "^5.5.1"
   },
   "devDependencies": {
-    "@babel/polyfill": "^7.4.4",
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/node": "^7.6.2",
+    "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.5.5",
     "@babel/register": "^7.5.5",
     "eslint": "^6.2.2",
